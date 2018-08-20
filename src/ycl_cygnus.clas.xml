@@ -13,7 +13,22 @@
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
+    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>YCL_CYGNUS</CLSNAME>
+     <CMPNAME>EQUALS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Compare two objects equivalence.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>YCL_CYGNUS</CLSNAME>
+     <CMPNAME>TRIM</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Remove spaces in string.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>
