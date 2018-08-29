@@ -7,35 +7,41 @@ public section.
 
   types YFILTERED type ref to DATA .
 
-  class-methods TRIM
+  methods TRIM
     importing
       !IM_STRING type STRING
     returning
       value(RE_STRING) type STRING .
-  class-methods SPLIT
+  methods SPLIT
     importing
       !IM_DELIMITER type C
       !IM_STRING type STRING
     returning
       value(RE_STRINGTAB) type STRINGTAB .
-  class-methods EQUALS
+  methods EQUALS
     importing
       !IM_INPUT1 type ANY
       !IM_INPUT2 type ANY
     returning
       value(RE_VALID) type ABAP_BOOL .
-  class-methods FILTER
+  methods FILTER
     importing
       !IM_FILTER type ANY
       !IM_DATA type ANY
     returning
       value(RE_FILTERED) type YFILTERED .
-  class-methods INTERPERSE
+  methods INTERPERSE
     importing
       !IM_DELIMITER type STRING
       !IM_STRINGTAB type STRINGTAB
     returning
       value(RE_STRINGTAB) type STRINGTAB .
+  methods WITHOUT
+    importing
+      !IM_INPUT1 type DATA
+      !IM_INPUT2 type DATA
+    returning
+      value(RE_RESULT) type ref to DATA .
 PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -70,4 +76,10 @@ ENDMETHOD.
 METHOD trim.
   re_string = shift_left( shift_right( im_string ) ).
 ENDMETHOD.
+
+
+  METHOD without.
+    ASSIGN im_input1->* TO FIELD-SYMBOL(<input1>).
+    ASSIGN im_input2->* TO FIELD-SYMBOL(<input2>).
+  ENDMETHOD.
 ENDCLASS.
